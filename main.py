@@ -2,12 +2,19 @@ import logging
 import sys
 from src.math_utils import MyBigNumber
 
-# Configure logging to output to console
+# Configure logging to output to console with UTF-8 encoding
+# We use sys.stdout and set its encoding if possible
+if sys.stdout.encoding != 'utf-8':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(message)s",
     handlers=[logging.StreamHandler(sys.stdout)]
 )
+
+
 
 def main():
     big_number = MyBigNumber()
