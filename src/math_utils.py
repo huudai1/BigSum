@@ -24,11 +24,12 @@ class MyBigNumber:
         result = []
         step = 1
 
-        # Iterate from right to left
+        # Vòng lặp chạy từ phải sang trái cho đến khi hết cả 2 chuỗi và không còn số dư (carry)
         while i >= 0 or j >= 0 or carry > 0:
-            # Get digits, default to 0 if index is out of bounds
+            # Lấy ký số tại vị trí hiện tại, nếu hết chuỗi thì mặc định là 0
             digit1 = int(stn1[i]) if i >= 0 else 0
             digit2 = int(stn2[j]) if j >= 0 else 0
+
             
             # Calculate sum of digits
             current_sum = digit1 + digit2
